@@ -1,0 +1,582 @@
+<!-- ========================================= -->
+<!-- FILE: index.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebCreators Hub</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      background:rgba(17,24,39,0.95);
+      padding:15px 20px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#60a5fa;
+      font-size:1.7rem;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    /* HERO */
+
+    header{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.8)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop') center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero-content{
+      max-width:800px;
+      animation:fadeIn 1.5s ease;
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .hero-content p{
+      font-size:1.2rem;
+      margin-bottom:30px;
+      color:#e2e8f0;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+      font-weight:bold;
+      margin:10px;
+    }
+
+    .btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-5px);
+    }
+
+    .btn-secondary{
+      background:white;
+      color:#2563eb;
+    }
+
+    .btn-secondary:hover{
+      background:#e2e8f0;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 20px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    h2{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .section-text{
+      text-align:center;
+      max-width:700px;
+      margin:0 auto 50px;
+      color:#cbd5e1;
+    }
+
+    /* SERVICES */
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:35px;
+      border-radius:18px;
+      transition:0.4s;
+      text-align:center;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .card h3{
+      color:#60a5fa;
+      margin-bottom:15px;
+      font-size:1.5rem;
+    }
+
+    .card p{
+      color:#cbd5e1;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .portfolio-item{
+      background:#1e293b;
+      border-radius:15px;
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .portfolio-item:hover{
+      transform:translateY(-10px);
+    }
+
+    .portfolio-item img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .portfolio-content{
+      padding:25px;
+    }
+
+    .portfolio-content h3{
+      margin-bottom:10px;
+      color:#60a5fa;
+    }
+
+    /* STATS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat{
+      background:#1e293b;
+      padding:40px;
+      text-align:center;
+      border-radius:15px;
+    }
+
+    .stat h3{
+      font-size:3rem;
+      color:#60a5fa;
+      margin-bottom:10px;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      text-align:center;
+      border-radius:20px;
+      padding:70px 30px;
+    }
+
+    .cta h2{
+      margin-bottom:20px;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:65px;
+      height:65px;
+      background:#25D366;
+      border-radius:50%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      color:white;
+      font-size:2rem;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+      z-index:999;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:40px 20px;
+      margin-top:60px;
+    }
+
+    footer p{
+      color:#94a3b8;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav ul{
+        gap:12px;
+        font-size:0.9rem;
+      }
+
+      .hero-content h1{
+        font-size:2.5rem;
+      }
+
+      h2{
+        font-size:2.2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="nav-container">
+
+    <div class="logo">
+      WebCreators Hub
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<header>
+
+  <div class="hero-content">
+
+    <h1>
+      Build Powerful Websites That Grow Your Business
+    </h1>
+
+    <p>
+      We create beautiful, responsive, and high-converting websites
+      for businesses, creators, startups, and brands worldwide.
+    </p>
+
+    <a href="contact.html" class="btn">
+      Start Your Project
+    </a>
+
+    <a href="portfolio.html" class="btn btn-secondary">
+      View Portfolio
+    </a>
+
+  </div>
+
+</header>
+
+<!-- SERVICES -->
+
+<section>
+
+  <div class="container">
+
+    <h2>What We Do</h2>
+
+    <p class="section-text">
+      We combine modern design, fast performance, and strategic
+      development to help businesses establish a powerful online presence.
+    </p>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>Website Design</h3>
+        <p>
+          Professional and visually stunning website designs
+          customized for your brand identity.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Responsive Development</h3>
+        <p>
+          Websites optimized perfectly for mobile, tablet,
+          and desktop devices.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>SEO Optimization</h3>
+        <p>
+          Increase visibility on Google and attract
+          more customers organically.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>E-Commerce Stores</h3>
+        <p>
+          Sell products online with fast,
+          secure, and modern online stores.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PORTFOLIO PREVIEW -->
+
+<section style="background:#111827;">
+
+  <div class="container">
+
+    <h2>Featured Projects</h2>
+
+    <p class="section-text">
+      Here are some examples of modern website experiences
+      we can build for your business.
+    </p>
+
+    <div class="portfolio">
+
+      <div class="portfolio-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+          alt="Business Website"
+        >
+
+        <div class="portfolio-content">
+          <h3>Corporate Business Website</h3>
+          <p>
+            Modern business website with responsive design
+            and conversion-focused layout.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="portfolio-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop"
+          alt="Ecommerce Website"
+        >
+
+        <div class="portfolio-content">
+          <h3>E-Commerce Store</h3>
+          <p>
+            High-performance online store with product pages,
+            payment integration, and mobile optimization.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="portfolio-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop"
+          alt="Creative Agency Website"
+        >
+
+        <div class="portfolio-content">
+          <h3>Creative Agency Platform</h3>
+          <p>
+            Stylish portfolio website built for agencies,
+            creators, and freelancers.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+
+<section>
+
+  <div class="container">
+
+    <h2>Why Choose Us</h2>
+
+    <div class="stats">
+
+      <div class="stat">
+        <h3>150+</h3>
+        <p>Projects Completed</p>
+      </div>
+
+      <div class="stat">
+        <h3>98%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+
+      <div class="stat">
+        <h3>5+</h3>
+        <p>Years Experience</p>
+      </div>
+
+      <div class="stat">
+        <h3>24/7</h3>
+        <p>Customer Support</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>
+        Ready to Build Your Dream Website?
+      </h2>
+
+      <p style="margin-bottom:30px;">
+        Let’s create something amazing together.
+        Contact us today and bring your vision online.
+      </p>
+
+      <a href="contact.html" class="btn btn-secondary">
+        Contact Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a
+  href="https://wa.me/2348070674482"
+  class="whatsapp"
+  target="_blank"
+>
+  💬
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 WebCreators Hub. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>

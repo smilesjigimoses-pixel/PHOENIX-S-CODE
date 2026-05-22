@@ -1,0 +1,169 @@
+<!-- ========================================= -->
+<!-- FILE: pricing.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | WebCreators Hub</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    nav{
+      background:#111827;
+      padding:15px 20px;
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#60a5fa;
+      font-size:1.5rem;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 20px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:50px;
+      font-size:3rem;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .price-card{
+      background:#1e293b;
+      padding:35px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .price-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .price-card h2{
+      color:#60a5fa;
+      margin-bottom:15px;
+    }
+
+    .price{
+      font-size:2.5rem;
+      margin:20px 0;
+    }
+
+    .price-card p{
+      margin:10px 0;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+      margin-top:50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">WebCreators Hub</div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Pricing Plans</h1>
+
+  <div class="pricing">
+
+    <div class="price-card">
+      <h2>Basic</h2>
+      <div class="price">₦50,000</div>
+      <p>3 Pages Website</p>
+      <p>Responsive Design</p>
+      <p>Basic SEO</p>
+    </div>
+
+    <div class="price-card">
+      <h2>Standard</h2>
+      <div class="price">₦120,000</div>
+      <p>10 Pages Website</p>
+      <p>SEO Optimization</p>
+      <p>WhatsApp Integration</p>
+    </div>
+
+    <div class="price-card">
+      <h2>Premium</h2>
+      <div class="price">₦250,000</div>
+      <p>E-Commerce Website</p>
+      <p>Payment Gateway</p>
+      <p>Full Support</p>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 WebCreators Hub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

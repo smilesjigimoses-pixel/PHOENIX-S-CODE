@@ -1,0 +1,185 @@
+<!-- ========================================= -->
+<!-- FILE: contact.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | WebCreators Hub</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    nav{
+      background:#111827;
+      padding:15px 20px;
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#60a5fa;
+      font-size:1.5rem;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    .container{
+      max-width:700px;
+      margin:auto;
+      padding:80px 20px;
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:20px;
+      font-size:3rem;
+    }
+
+    p{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    input,textarea{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      font-size:1rem;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    button{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background:#2563eb;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#1d4ed8;
+    }
+
+    .whatsapp{
+      display:inline-block;
+      margin-top:25px;
+      background:#25D366;
+      color:white;
+      padding:15px 25px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:30px;
+      color:#94a3b8;
+      margin-top:50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo">WebCreators Hub</div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1>Contact Us</h1>
+
+  <p>Fill the form below and we’ll get back to you quickly.</p>
+
+  <form action="https://formsubmit.co/emmymosessam@gmail.com" method="POST">
+
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <input type="text" name="phone" placeholder="Phone Number">
+
+    <textarea name="message" placeholder="Tell us about your project"></textarea>
+
+    <button type="submit">Send Message</button>
+
+  </form>
+
+  <div style="text-align:center;">
+    <a
+      class="whatsapp"
+      href="https://wa.me/2348070674482"
+      target="_blank"
+    >
+      Chat on WhatsApp
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 WebCreators Hub. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

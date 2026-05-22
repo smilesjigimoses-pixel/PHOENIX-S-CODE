@@ -1,0 +1,533 @@
+<!-- ========================================= -->
+<!-- FILE: portfolio.html -->
+<!-- ========================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | WebCreators Hub</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      background:#111827;
+      padding:15px 20px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      color:#60a5fa;
+      font-size:1.7rem;
+      font-weight:bold;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      color:#60a5fa;
+    }
+
+    /* HERO */
+
+    .hero{
+      background:
+      linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.8)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop') center/cover;
+      padding:120px 20px;
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      font-size:1.2rem;
+      color:#e2e8f0;
+    }
+
+    /* CONTAINER */
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 20px;
+    }
+
+    h2{
+      text-align:center;
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .section-text{
+      text-align:center;
+      max-width:750px;
+      margin:0 auto 60px;
+      color:#cbd5e1;
+    }
+
+    /* PORTFOLIO GRID */
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .portfolio-card{
+      background:#1e293b;
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.4s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .portfolio-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .portfolio-card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .portfolio-content{
+      padding:25px;
+    }
+
+    .portfolio-content h3{
+      color:#60a5fa;
+      margin-bottom:12px;
+      font-size:1.5rem;
+    }
+
+    .portfolio-content p{
+      color:#cbd5e1;
+      margin-bottom:20px;
+    }
+
+    .visit-btn{
+      display:inline-block;
+      padding:12px 22px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .visit-btn:hover{
+      background:#1d4ed8;
+    }
+
+    /* CTA */
+
+    .cta{
+      margin-top:100px;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      padding:70px 30px;
+      border-radius:20px;
+      text-align:center;
+    }
+
+    .cta h2{
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      margin-bottom:30px;
+      color:#f1f5f9;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 30px;
+      background:white;
+      color:#2563eb;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-5px);
+      background:#e2e8f0;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      width:65px;
+      height:65px;
+      border-radius:50%;
+      background:#25D366;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-decoration:none;
+      color:white;
+      font-size:2rem;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+      z-index:999;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:35px 20px;
+      margin-top:70px;
+    }
+
+    footer p{
+      color:#94a3b8;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav ul{
+        gap:12px;
+        font-size:0.9rem;
+      }
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      h2{
+        font-size:2.2rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+  <div class="nav-container">
+
+    <div class="logo">
+      WebCreators Hub
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <h1>Our Portfolio</h1>
+
+  <p>
+    Explore some of the modern and professional websites
+    we can create for businesses, brands, agencies,
+    startups, and online stores.
+  </p>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="container">
+
+  <h2>Featured Projects</h2>
+
+  <p class="section-text">
+    Every project is built with modern UI/UX principles,
+    responsive layouts, speed optimization, and strong branding.
+  </p>
+
+  <div class="portfolio-grid">
+
+    <!-- PROJECT 1 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+        alt="Corporate Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>Corporate Business Website</h3>
+
+        <p>
+          Professional company website with responsive design,
+          SEO optimization, and lead generation sections.
+        </p>
+
+        <a
+          href="https://www.apple.com"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 2 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop"
+        alt="Ecommerce Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>E-Commerce Store</h3>
+
+        <p>
+          Fast online shopping experience with product pages,
+          checkout system, and payment integration.
+        </p>
+
+        <a
+          href="https://www.shopify.com"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 3 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200&auto=format&fit=crop"
+        alt="Creative Agency Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>Creative Agency Platform</h3>
+
+        <p>
+          Stylish and modern agency website with animations,
+          portfolios, testimonials, and call-to-action sections.
+        </p>
+
+        <a
+          href="https://dribbble.com"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 4 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+        alt="Tech Startup Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>Tech Startup Website</h3>
+
+        <p>
+          Modern startup landing page focused on user conversion,
+          speed, and professional branding.
+        </p>
+
+        <a
+          href="https://stripe.com"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 5 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=1200&auto=format&fit=crop"
+        alt="Restaurant Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>Restaurant Website</h3>
+
+        <p>
+          Elegant restaurant website with menu sections,
+          reservations, and food gallery integrations.
+        </p>
+
+        <a
+          href="https://www.airbnb.com"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT 6 -->
+
+    <div class="portfolio-card">
+
+      <img
+        src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop"
+        alt="Personal Brand Website"
+      >
+
+      <div class="portfolio-content">
+
+        <h3>Personal Brand Website</h3>
+
+        <p>
+          Portfolio and branding website designed for creators,
+          influencers, freelancers, and entrepreneurs.
+        </p>
+
+        <a
+          href="https://www.behance.net"
+          target="_blank"
+          class="visit-btn"
+        >
+          View Inspiration
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+
+  <div class="cta">
+
+    <h2>
+      Want a Website Like These?
+    </h2>
+
+    <p>
+      Let’s build a powerful website that helps your
+      business stand out online.
+    </p>
+
+    <a href="contact.html" class="btn">
+      Start Your Project
+    </a>
+
+  </div>
+
+</section>
+
+<!-- WHATSAPP -->
+
+<a
+  href="https://wa.me/2348070674482"
+  class="whatsapp"
+  target="_blank"
+>
+  💬
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 WebCreators Hub. All rights reserved.
+  </p>
+
+</footer>
+
+</body>
+</html>
